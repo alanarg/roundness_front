@@ -1,7 +1,7 @@
 import React from 'react';
-import {BrowserRouter, Switch, Route, Redirect, Router} from 'react-router-dom';
+import {BrowserRouter, Switch, Route, Redirect} from 'react-router-dom';
 import Pagina from './Components/Pagina/Blog';
-import Grupos from './Components/grupos/index';
+// import Grupos from './Components/grupos/index';
 import Admin from './Components/Admin/index';
 import Cadastro from './Components/Cadastro/index';
 import Login from './Components/Login/index';
@@ -38,7 +38,7 @@ const Routes = ()=>(
             <Route  path="/login/:notify?" component={Login}></Route>
             <Route exact path="/password/reset/:token" component={Passwordreset}></Route>
             <Route path="/password/forgot" component={Passwordforgot}/>
-            <SecuredRoute path="/menu" component={Grupos}></SecuredRoute>
+            {/* <SecuredRoute path="/menu" component={Grupos}></SecuredRoute> */}
             <SecuredRoute path="/admin" component={Admin}></SecuredRoute>
             <SecuredRoute path="/perfil" component={Profile}></SecuredRoute>
         </Switch>

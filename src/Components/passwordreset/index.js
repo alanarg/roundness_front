@@ -51,7 +51,7 @@ class Passwordreset extends Component {
     setFieldValue
   }) => {
     return (
-      <form role="form" onSubmit={handleSubmit}>
+      <form  onSubmit={handleSubmit}>
         <div className="card-body">
           <div className="form-group  has-feedback">
             <label htmlFor="password">Password:</label>
@@ -118,7 +118,8 @@ class Passwordreset extends Component {
       <div className="login-page">
         <div className="login-box">
           <div className="login-logo">
-            <a href="#">
+          {/* eslint-disable-next-line */}
+            <a >
               <b>Basic</b>POS
             </a>
           </div>

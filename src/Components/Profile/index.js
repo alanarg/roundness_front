@@ -4,9 +4,9 @@ import * as Yup from 'yup'
 import Header from '../Header'
 import axios from 'axios'
 import swal from 'sweetalert'
-import fs from 'fs'
 const FILE_SIZE = 160 * 1024
 const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/gif', 'image/png']
+// eslint-disable-next-line
 const ProfileSchema = Yup.object().shape({
   avatars: Yup.mixed()
     .required('A file is required')
@@ -85,7 +85,7 @@ class Profile extends Component {
       <div class='text-center'>
         <img
           id='avatars'
-
+          alt="avatar"
           src={
             values.file_obj != null
               ? values.file_obj
@@ -143,7 +143,7 @@ class Profile extends Component {
     setFieldValue
   }) => {
     return (
-      <form role='form' onSubmit={handleSubmit}>
+      <form  onSubmit={handleSubmit}>
         {this.showPreviewImage(values)}
         <div className='card-body'>
           <span style={{ color: '#00B0CD', marginLeft: 10 }}>Add Picture</span>
@@ -153,6 +153,7 @@ class Profile extends Component {
               <div className='custom-file'>
                 <input
                   type='file'
+                  value={values.avatars}
                   onChange={e => {
                     e.preventDefault()
                     setFieldValue('avatars', e.target.files[0]) // for upload
@@ -162,15 +163,13 @@ class Profile extends Component {
                     ) // for preview image
                   }}
                   name='avatars'
+                  accept='image/*'
                   className={
-                    errors.email && touched.email
+                    errors.avatars && touched.avatars
                       ? 'form-control is-invalid'
                       : 'form-control'
                   }
-                  accept='image/*'
                   id='avatars'
-                  className='custom-file-input'
-                  id='exampleInputFile'
                 />
                 <label className='custom-file-label' htmlFor='exampleInputFile'>
                   Choose file
@@ -186,6 +185,7 @@ class Profile extends Component {
               onChange={handleChange}
               value={values.email}
               type='email'
+              name='email'
               className={
                 errors.email && touched.email
                   ? 'form-control is-invalid'
@@ -206,6 +206,7 @@ class Profile extends Component {
               onChange={handleChange}
               value={values.username}
               type='text'
+              name='username'
               className={
                 errors.username && touched.username
                   ? 'form-control is-invalid'
@@ -214,11 +215,12 @@ class Profile extends Component {
               id='username'
               placeholder='Enter UserName'
             />
-            <label htmlFor='username'>First Name</label>
+            <label htmlFor='first_name'>First Name</label>
             <input
               onChange={handleChange}
               value={values.first_name}
               type='text'
+              name='first_name'
               className={
                 errors.first_name && touched.first_name
                   ? 'form-control is-invalid'
@@ -239,6 +241,7 @@ class Profile extends Component {
               onChange={handleChange}
               value={values.last_name}
               type='text'
+              name='last_name'
               className={
                 errors.last_name && touched.last_name
                   ? 'form-control is-invalid'
@@ -259,6 +262,7 @@ class Profile extends Component {
               onChange={handleChange}
               value={values.phone}
               type='text'
+              name='phone'
               className={
                 errors.phone && touched.phone
                   ? 'form-control is-invalid'
@@ -278,6 +282,7 @@ class Profile extends Component {
             <textarea
               onChange={handleChange}
               value={values.address}
+              name='address'
               className={
                 errors.address && touched.address
                   ? 'form-control is-invalid'
@@ -344,6 +349,7 @@ class Profile extends Component {
                         ? result
                         : {
                             id: '',
+                            avatars:'',
                             username: '',
                             email: '',
                             first_name: '',

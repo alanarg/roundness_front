@@ -18,7 +18,8 @@ const Dashboard =()=>{
           <div className="icon">
             <i className="ion ion-bag" />
           </div>
-          <a href="#" className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></a>
+          {/* eslint-disable-next-line */}
+          <a  className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></a>
         </div>
       </div>
       {/* ./col */}
@@ -32,7 +33,8 @@ const Dashboard =()=>{
           <div className="icon">
             <i className="ion ion-stats-bars" />
           </div>
-          <a href="#" className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></a>
+          {/* eslint-disable-next-line */}
+          <a  className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></a>
         </div>
       </div>
       {/* ./col */}
@@ -46,7 +48,8 @@ const Dashboard =()=>{
           <div className="icon">
             <i className="ion ion-person-add" />
           </div>
-          <a href="#" className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></a>
+          {/* eslint-disable-next-line */}
+          <a className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></a>
         </div>
       </div>
       {/* ./col */}
@@ -60,7 +63,8 @@ const Dashboard =()=>{
           <div className="icon">
             <i className="ion ion-pie-graph" />
           </div>
-          <a href="#" className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></a>
+          {/* eslint-disable-next-line */}
+          <a  className="small-box-footer">More info <i className="fas fa-arrow-circle-right" /></a>
         </div>
       </div>
       {/* ./col */}
@@ -128,7 +132,7 @@ const Dashboard =()=>{
                   <span className="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
                 </div>
                 {/* /.direct-chat-infos */}
-                <img className="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image" />
+                <img alt="chat" className="direct-chat-img" src="dist/img/user1-128x128.jpg"  />
                 {/* /.direct-chat-img */}
                 <div className="direct-chat-text">
                   Is this template really for free? That's unbelievable!
@@ -143,7 +147,7 @@ const Dashboard =()=>{
                   <span className="direct-chat-timestamp float-left">23 Jan 2:05 pm</span>
                 </div>
                 {/* /.direct-chat-infos */}
-                <img className="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image" />
+                <img className="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message" />
                 {/* /.direct-chat-img */}
                 <div className="direct-chat-text">
                   You better believe it!
@@ -158,7 +162,7 @@ const Dashboard =()=>{
                   <span className="direct-chat-timestamp float-right">23 Jan 5:37 pm</span>
                 </div>
                 {/* /.direct-chat-infos */}
-                <img className="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message user image" />
+                <img className="direct-chat-img" src="dist/img/user1-128x128.jpg" alt="message" />
                 {/* /.direct-chat-img */}
                 <div className="direct-chat-text">
                   Working with AdminLTE on a great new app! Wanna join?
@@ -173,7 +177,7 @@ const Dashboard =()=>{
                   <span className="direct-chat-timestamp float-left">23 Jan 6:10 pm</span>
                 </div>
                 {/* /.direct-chat-infos */}
-                <img className="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user image" />
+                <img className="direct-chat-img" src="dist/img/user3-128x128.jpg" alt="message user" />
                 {/* /.direct-chat-img */}
                 <div className="direct-chat-text">
                   I would love to.
@@ -187,8 +191,9 @@ const Dashboard =()=>{
             <div className="direct-chat-contacts">
               <ul className="contacts-list">
                 <li>
+                  {/* eslint-disable-next-line */}
                   <a href="#">
-                    <img className="contacts-list-img" src="dist/img/user1-128x128.jpg" />
+                    <img className="contacts-list-img" alt="..." src="dist/img/user1-128x128.jpg" />
                     <div className="contacts-list-info">
                       <span className="contacts-list-name">
                         Count Dracula
@@ -201,8 +206,9 @@ const Dashboard =()=>{
                 </li>
                 {/* End Contact Item */}
                 <li>
+                  {/* eslint-disable-next-line */}
                   <a href="#">
-                    <img className="contacts-list-img" src="dist/img/user7-128x128.jpg" />
+                    <img className="contacts-list-img" alt="..." src="dist/img/user7-128x128.jpg" />
                     <div className="contacts-list-info">
                       <span className="contacts-list-name">
                         Sarah Doe
@@ -215,8 +221,9 @@ const Dashboard =()=>{
                 </li>
                 {/* End Contact Item */}
                 <li>
+                  {/* eslint-disable-next-line */}
                   <a href="#">
-                    <img className="contacts-list-img" src="dist/img/user3-128x128.jpg" />
+                    <img alt="..." className="contacts-list-img" src="dist/img/user3-128x128.jpg" />
                     <div className="contacts-list-info">
                       <span className="contacts-list-name">
                         Nadia Jolie
@@ -229,8 +236,9 @@ const Dashboard =()=>{
                 </li>
                 {/* End Contact Item */}
                 <li>
+                {/* eslint-disable-next-line */}
                   <a href="#">
-                    <img className="contacts-list-img" src="dist/img/user5-128x128.jpg" />
+                    <img className="contacts-list-img" src="dist/img/user5-128x128.jpg" alt="..."/>
                     <div className="contacts-list-info">
                       <span className="contacts-list-name">
                         Nora S. Vans
@@ -243,8 +251,9 @@ const Dashboard =()=>{
                 </li>
                 {/* End Contact Item */}
                 <li>
+                  {/* eslint-disable-next-line */}
                   <a href="#">
-                    <img className="contacts-list-img" src="dist/img/user6-128x128.jpg" />
+                    <img className="contacts-list-img" alt="..." src="dist/img/user6-128x128.jpg" />
                     <div className="contacts-list-info">
                       <span className="contacts-list-name">
                         John K.
@@ -257,8 +266,9 @@ const Dashboard =()=>{
                 </li>
                 {/* End Contact Item */}
                 <li>
+                  {/* eslint-disable-next-line */}
                   <a href="#">
-                    <img className="contacts-list-img" src="dist/img/user8-128x128.jpg" />
+                    <img className="contacts-list-img" alt="..." src="dist/img/user8-128x128.jpg" />
                     <div className="contacts-list-info">
                       <span className="contacts-list-name">
                         Kenneth M.
@@ -298,11 +308,12 @@ const Dashboard =()=>{
             </h3>
             <div className="card-tools">
               <ul className="pagination pagination-sm">
-                <li className="page-item"><a href="#" className="page-link">«</a></li>
+                {/* <li className="page-item">
+                  <a href="#" className="page-link">«</a></li>
                 <li className="page-item"><a href="#" className="page-link">1</a></li>
                 <li className="page-item"><a href="#" className="page-link">2</a></li>
                 <li className="page-item"><a href="#" className="page-link">3</a></li>
-                <li className="page-item"><a href="#" className="page-link">»</a></li>
+                <li className="page-item"><a href="#" className="page-link">»</a></li> */}
               </ul>
             </div>
           </div>
@@ -523,9 +534,12 @@ const Dashboard =()=>{
                 <button type="button" className="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown">
                   <i className="fas fa-bars" /></button>
                 <div className="dropdown-menu float-right" role="menu">
+            {/* eslint-disable-next-line */}
                   <a href="#" className="dropdown-item">Add new event</a>
+            {/* eslint-disable-next-line */}
                   <a href="#" className="dropdown-item">Clear events</a>
                   <div className="dropdown-divider" />
+            {/* eslint-disable-next-line */}
                   <a href="#" className="dropdown-item">View calendar</a>
                 </div>
               </div>

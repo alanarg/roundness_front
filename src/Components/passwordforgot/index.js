@@ -46,7 +46,7 @@ class Passwordforgot extends Component {
     setFieldValue
   }) => {
     return (
-      <form role="form" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <div className="card-body">
           <div className="form-group  has-feedback">
             <label htmlFor="email">Email address</label>
@@ -90,6 +90,7 @@ class Passwordforgot extends Component {
       <div className="login-page">
         <div className="login-box">
           <div className="login-logo">
+            {/* eslint-disable-next-line */}
             <a href="#">
               <b>Basic</b>POS
             </a>

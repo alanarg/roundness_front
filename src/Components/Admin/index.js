@@ -30,13 +30,15 @@ const Admin = ()=>{
       {/* Left navbar links */}
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link" data-widget="pushmenu" href="#"><i className="fas fa-bars" /></a>
+          {/* eslint-disable-next-line */}
+          <a className="nav-link" data-widget="pushmenu" ><i className="fas fa-bars" /></a>
         </li>
         <li className="nav-item d-none d-sm-inline-block">
           <a href="../../index3.html" className="nav-link">Home</a>
         </li>
+        {/* eslint-disable-next-line */}
         <li className="nav-item d-none d-sm-inline-block">
-          <a href="#" className="nav-link">Contact</a>
+          {/* <a  className="nav-link">Contact</a> */}
         </li>
       </ul>
       {/* SEARCH FORM */}
@@ -54,12 +56,14 @@ const Admin = ()=>{
       <ul className="navbar-nav ml-auto">
         {/* Messages Dropdown Menu */}
         <li className="nav-item dropdown">
-          <a className="nav-link" data-toggle="dropdown" href="#">
+            {/* eslint-disable-next-line */}
+          <a className="nav-link" data-toggle="dropdown" >
             <i className="far fa-comments" />
             <span className="badge badge-danger navbar-badge">3</span>
           </a>
           <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <a href="#" className="dropdown-item">
+            {/* eslint-disable-next-line */}
+            <a  className="dropdown-item">
               {/* Message Start */}
               <div className="media">
                 <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" className="img-size-50 mr-3 img-circle" />
@@ -75,7 +79,8 @@ const Admin = ()=>{
               {/* Message End */}
             </a>
             <div className="dropdown-divider" />
-            <a href="#" className="dropdown-item">
+            {/* eslint-disable-next-line */}
+            <a className="dropdown-item">
               {/* Message Start */}
               <div className="media">
                 <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" className="img-size-50 img-circle mr-3" />
@@ -91,7 +96,8 @@ const Admin = ()=>{
               {/* Message End */}
             </a>
             <div className="dropdown-divider" />
-            <a href="#" className="dropdown-item">
+            {/* eslint-disable-next-line */}
+            <a  className="dropdown-item">
               {/* Message Start */}
               <div className="media">
                 <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar" className="img-size-50 img-circle mr-3" />
@@ -107,11 +113,13 @@ const Admin = ()=>{
               {/* Message End */}
             </a>
             <div className="dropdown-divider" />
-            <a href="#" className="dropdown-item dropdown-footer">See All Messages</a>
+            {/* eslint-disable-next-line */}
+            <a className="dropdown-item dropdown-footer">See All Messages</a>
           </div>
         </li>
         {/* Notifications Dropdown Menu */}
         <li className="nav-item dropdown">
+          {/* eslint-disable-next-line */}
           <a className="nav-link" data-toggle="dropdown" href="#">
             <i className="far fa-bell" />
             <span className="badge badge-warning navbar-badge">15</span>
@@ -119,25 +127,30 @@ const Admin = ()=>{
           <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
             <span className="dropdown-item dropdown-header">15 Notifications</span>
             <div className="dropdown-divider" />
-            <a href="#" className="dropdown-item">
+            {/* eslint-disable-next-line */}
+            <a  className="dropdown-item">
               <i className="fas fa-envelope mr-2" /> 4 new messages
               <span className="float-right text-muted text-sm">3 mins</span>
             </a>
             <div className="dropdown-divider" />
-            <a href="#" className="dropdown-item">
+            {/* eslint-disable-next-line */}
+            <a  className="dropdown-item">
               <i className="fas fa-users mr-2" /> 8 friend requests
               <span className="float-right text-muted text-sm">12 hours</span>
             </a>
             <div className="dropdown-divider" />
-            <a href="#" className="dropdown-item">
+            {/* eslint-disable-next-line */}
+            <a className="dropdown-item">
               <i className="fas fa-file mr-2" /> 3 new reports
               <span className="float-right text-muted text-sm">2 days</span>
             </a>
             <div className="dropdown-divider" />
-            <a href="#" className="dropdown-item dropdown-footer">See All Notifications</a>
+            {/* eslint-disable-next-line */}
+            <a  className="dropdown-item dropdown-footer">See All Notifications</a>
           </div>
         </li>
-        <li className="nav-item">
+        <li className="nav-item">  
+          {/* eslint-disable-next-line */}
           <a className="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
             <i className="fas fa-th-large" />
           </a>
@@ -157,10 +170,11 @@ const Admin = ()=>{
         {/* Sidebar user (optional) */}
         <div className="user-panel mt-3 pb-3 mb-3 d-flex">
           <div className="image">
-            <img src="../../dist/img/user2-160x160.jpg" className="img-circle elevation-2" alt="User Image" />
+            <img src="../../dist/img/user2-160x160.jpg" className="img-circle elevation-2" alt="User" />
           </div>
           <div className="info">
-            <a href="#" className="d-block">Alexander Pierce</a>
+            {/* eslint-disable-next-line */}
+            <a  className="d-block">Alexander Pierce</a>
           </div>
         </div>
         {/* Sidebar Menu */}
@@ -169,7 +183,8 @@ const Admin = ()=>{
             {/* Add icons to the links using the .nav-icon class
          with font-awesome or any other icon font library */}
             <li className="nav-item has-treeview">
-              <a href="#" className="nav-link">
+            {/* eslint-disable-next-line */}
+              <a  className="nav-link">
                 <i className="nav-icon fas fa-tachometer-alt" />
                 <p>
                   Dashboard
@@ -207,7 +222,8 @@ const Admin = ()=>{
               </a>
             </li>
             <li className="nav-item has-treeview menu-open">
-              <a href="#" className="nav-link active">
+            {/* eslint-disable-next-line */}
+              <a  className="nav-link active">
                 <i className="nav-icon fas fa-copy" />
                 <p>
                   Layout Options
@@ -280,8 +296,14 @@ const Admin = ()=>{
             </div>
             <div className="col-sm-6">
               <ol className="breadcrumb float-sm-right">
-                <li className="breadcrumb-item"><a href="#">Home</a></li>
-                <li className="breadcrumb-item"><a href="#">Layout</a></li>
+                <li className="breadcrumb-item">
+                  {/* eslint-disable-next-line */}
+                  <a href="#">Home</a>
+                </li>
+                <li className="breadcrumb-item">
+                  {/* eslint-disable-next-line */}
+                  <a href="#">Layout</a>
+                </li>
                 <li className="breadcrumb-item active">Fixed Layout</li>
               </ol>
             </div>

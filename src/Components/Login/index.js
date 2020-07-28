@@ -27,9 +27,9 @@ class Login extends Component {
     }
     let notify = this.props.match.params["notify"]
     if(notify !== undefined){
-      if(notify == 'error'){
+      if(notify === 'error'){
         swal("Activation Fail please try again !", '', "error")
-      }else if(notify == 'success'){
+      }else if(notify === 'success'){
         swal("Activation Success your can login !", '', "success")
       }
      
@@ -71,7 +71,6 @@ class Login extends Component {
             name="username"
             onChange={handleChange}
             value={values.username}
-            className="form-control"
             placeholder="Username"
             className={
               errors.username && touched.username
@@ -96,7 +95,6 @@ class Login extends Component {
             name="password"
             onChange={handleChange}
             value={values.password}
-            className="form-control"
             placeholder="Password"
             className={
               errors.password && touched.password

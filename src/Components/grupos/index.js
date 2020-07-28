@@ -1,10 +1,7 @@
-import React, { Component, useState } from 'react';
+import React, { Component} from 'react';
 import './styles.css';
 import Button from '@material-ui/core/Button';
-import CameraIcon from '@material-ui/icons/Restaurant';
-import Food from '@material-ui/icons/RestaurantMenuSharp';
-import Add from '@material-ui/icons/Add';
-import Create from '@material-ui/icons/Create';
+
 import Menu from '@material-ui/icons/MenuBook';
 import Timeline from '@material-ui/icons/Timeline';
 import Esport from '@material-ui/icons/FitnessCenter';
@@ -12,7 +9,6 @@ import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -25,18 +21,10 @@ import mesas from "./img/mesas.png";
 import associados from "./img/associados.png";
 import clientes from "./img/clientes.png";
 import delivery from "./img/delivery.png";
-import estoque from "./img/estoque.png";
-import bebidas from "./img/bebidas.jpg";
-import ovos from "./img/ovos.jpg";
-import doces from "./img/doces.jpg";
-import indus from "./img/indus.jpg";
-import prontos from "./img/prontos.jpg";
-import leguminosas from "./img/leguminosas.jpg";
-import nozes from "./img/nozes.jpg";
+
 import foto from "./img/addphoto.jpg";
 import { Link } from 'react-router-dom';
 // import CustomizedDialogs from '../refeicao/index';
-import { yellow } from '@material-ui/core/colors';
 import Header from '../Header';
 
 
@@ -120,7 +108,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const SampleFab = (props) => {
-  const [comidas, setComidas] = useState([0]);
   // const comidas = useSelector(state=> state.comidas);
   
  
@@ -171,7 +158,7 @@ const SampleFab = (props) => {
 
                 </Grid>
 
-              {comidas.map(card2 => (
+              {/* {comidas.map(card2 => (
                 <Grid item key={card2} sm={4} >
                   <Card className={classes.card2}>
                     <CardMedia
@@ -198,7 +185,7 @@ const SampleFab = (props) => {
                     </CardActions>
                   </Card>
                 </Grid>
-              ))}
+              ))} */}
 
             </Grid>
 

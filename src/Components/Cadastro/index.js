@@ -62,7 +62,6 @@ class Cadastro extends Component {
             name="username"
             onChange={handleChange}
             value={values.username}
-            className="form-control"
             placeholder="Username"
             className={
               errors.username && touched.username
@@ -101,7 +100,6 @@ class Cadastro extends Component {
             name="password"
             onChange={handleChange}
             value={values.password}
-            className="form-control"
             placeholder="Password"
             className={
               errors.password && touched.password
