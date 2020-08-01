@@ -38,7 +38,7 @@ class Login extends Component {
 
   submitForm = (values, history) => {
     axios
-      .post(process.env.REACT_APP_API_URL + "login", values)
+      .post(process.env.REACT_APP_API + "login", values)
       .then(res => {
         if (res.data.result === "success") {
           localStorage.setItem("TOKEN_KEY", res.data.token);

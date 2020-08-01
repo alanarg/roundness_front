@@ -30,7 +30,9 @@ const useStyles = makeStyles(theme => ({
       },
     },
     header:{
-      background: "linear-gradient(to right, #ff5f6d, #ffc371)"
+      background: "linear-gradient(to right, #fdfbfb,#ebedee)"
+      
+
     },
     search: {
       position: 'relative',
