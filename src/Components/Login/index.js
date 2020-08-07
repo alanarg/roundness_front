@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Formik } from "formik";
 import './css.css';
+import Recaptcha from 'react-recaptcha';
 import * as Yup from "yup";
 import axios from "axios";
 import swal from "sweetalert";
@@ -21,7 +22,17 @@ class Login extends Component {
       alert: null
     };
   }
+  // initializeRecaptcha = async =>{
+  //   const script = document.createElement('script');
+  //   script.src = "https://www.google.com/recaptcha/api.js";
+  //   script.async = true;
+  //   script.defer = true;
+  //   document.body.appendChild(script);
+  // };
+  
   componentDidMount() {
+
+    // this.initializeRecaptcha();
     if (localStorage.getItem("TOKEN_KEY") != null) {
         return this.props.history.goBack();
     }
@@ -113,6 +124,21 @@ class Login extends Component {
             </small>
           ) : null}
         </div>
+        {/* <div className="form-group">
+          <label>Recaptcha Validation</label>
+          <Recaptcha
+            sitekey="6Le3jrsZAAAAAEQwff0m-qrLnOXbHlx4jBVLUCgH"
+            render="explicit"
+            theme="light"
+            verifyCallback={response => {
+              setFieldValue("recaptcha", response);
+            }}
+            onloadCallback={() => {
+              console.log("done loading!");
+            }}
+          />
+            {errors.recaptcha && touched.recaptcha && <p>{errors.recaptcha}</p>}
+        </div> */}
         <div class="row">
           <div class="col-8">
             <div class="icheck-primary">
