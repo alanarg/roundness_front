@@ -177,7 +177,8 @@ class Login extends Component {
               <Formik
                 initialValues={{
                   username: "",
-                  password: ""
+                  password: "",
+                  recaptcha: ""
                 }}
                 onSubmit={(values, { setSubmitting }) => {
                   this.submitForm(values, this.props.history);
