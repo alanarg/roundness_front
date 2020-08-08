@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Formik } from "formik";
 import './css.css';
+import Recaptcha from 'react-recaptcha';
 import * as Yup from "yup";
 import axios from "axios";
 import swal from "sweetalert";
@@ -10,6 +11,7 @@ const LoginSchema = Yup.object().shape({
     .min(2, "username is Too Short!")
     .max(50, "username is Too Long!")
     .required("Username is Required"),
+    recaptcha: Yup.string().required(),
   password: Yup.string().required("Password is required")
 });
 
@@ -21,7 +23,17 @@ class Login extends Component {
       alert: null
     };
   }
+  initializeRecaptcha = async =>{
+    const script = document.createElement('script');
+    script.src = "https://www.google.com/recaptcha/api.js";
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+  };
+  
   componentDidMount() {
+
+    this.initializeRecaptcha();
     if (localStorage.getItem("TOKEN_KEY") != null) {
         return this.props.history.goBack();
     }
@@ -112,6 +124,21 @@ class Login extends Component {
               {errors.password}
             </small>
           ) : null}
+        </div>
+        <div className="form-group">
+          <label>Recaptcha Validation</label>
+          <Recaptcha
+            sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
+            render="explicit"
+            theme="light"
+            verifyCallback={response => {
+              setFieldValue("recaptcha", response);
+            }}
+            onloadCallback={() => {
+              console.log("done loading!");
+            }}
+          />
+            {errors.recaptcha && touched.recaptcha && <p>{errors.recaptcha}</p>}
         </div>
         <div class="row">
           <div class="col-8">
