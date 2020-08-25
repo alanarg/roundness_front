@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Formik } from "formik";
 import './css.css';
+import logo from './redondeza.png';
 import Recaptcha from 'react-recaptcha';
 import * as Yup from "yup";
 import axios from "axios";
@@ -128,6 +129,7 @@ class Login extends Component {
         <div className="form-group">
           <label>Recaptcha Validation</label>
           <Recaptcha
+            // sitekey="6Le3jrsZAAAAAEQwff0m-qrLnOXbHlx4jBVLUCgH"
             sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
             render="explicit"
             theme="light"
@@ -164,16 +166,12 @@ class Login extends Component {
   render() {
     return (
       <div class="login-page">
-        <div className="register-box">
+        <div className="register-box" >
           <div className="register-logo">
-            <a href="../../index2.html">
-              <b><font color="#81F7F3">Roundness</font></b>
-            </a>
           </div>
           <div className="card">
             <div className="card-body register-card-body">
-              <p className="login-box-msg">Iniciar</p>
-
+            <img src={logo} alt="Redondeza" height="160px" width="300px" marginBottom="0px"/>
               <Formik
                 initialValues={{
                   username: "",

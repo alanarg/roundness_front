@@ -1,7 +1,8 @@
 .login-page{
-    background-image: url('./cidadenoturna.jpg');
-}
-#register-logo{
-    color:rgb(137, 255, 245);
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-image: url('../../assets/undraw_working_late_pukg.svg');
+    background-repeat: no-repeat;
+    background-color: #ffffff;
+    background-size:800px 400px;
+    background-position:center left;
+    
 }
