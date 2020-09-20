@@ -2,14 +2,12 @@ import React, { useEffect } from "react";
 import { Formik } from "formik";
 import './css.css';
 import * as loginActions from "../../actions/login.action";
-import Art from '../../assets/undraw_working_late_pukg.svg';
 import logo from './redondeza.png';
 import Recaptcha from 'react-recaptcha';
 import * as Yup from "yup";
-import axios from "axios";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 const LoginSchema = Yup.object().shape({
   username: Yup.string()
     .min(2, "username is Too Short!")
@@ -21,7 +19,6 @@ const LoginSchema = Yup.object().shape({
 
 const Login = (props)=> {
   const dispatch = useDispatch();
-  const loginReducer = useSelector(({loginReducer})=> loginReducer);
 
   const initializeRecaptcha = (async) => { 
     const script = document.createElement('script');
@@ -31,7 +28,7 @@ const Login = (props)=> {
     document.body.appendChild(script);
   };
   
-  useEffect(()=> {
+  useEffect((props)=> {
 
     initializeRecaptcha();
     if (localStorage.getItem("TOKEN_KEY") != null) {
@@ -48,24 +45,6 @@ const Login = (props)=> {
     }
    },[]);
 
-  const submitForm = (values, history) => {
-    axios
-      .post(process.env.REACT_APP_API + "login", values)
-      .then(res => {
-        if (res.data.result === "success") {
-          localStorage.setItem("TOKEN_KEY", res.data.token);
-          swal("Success!", res.data.message, "success").then(value => {
-            history.push("/");
-          });
-        } else if (res.data.result === "error") {
-          swal("Error!", res.data.message, "error");
-        }
-      })
-      .catch(error => {
-        console.log(error);
-        return swal("Error!", error.message, "error");
-      });
-  };
  const showForm = ({
     values,
     errors,
