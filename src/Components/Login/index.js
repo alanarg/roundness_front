@@ -1,12 +1,15 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { Formik } from "formik";
 import './css.css';
+import * as loginActions from "../../actions/login.action";
+import Art from '../../assets/undraw_working_late_pukg.svg';
 import logo from './redondeza.png';
 import Recaptcha from 'react-recaptcha';
 import * as Yup from "yup";
 import axios from "axios";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 const LoginSchema = Yup.object().shape({
   username: Yup.string()
     .min(2, "username is Too Short!")
@@ -16,15 +19,11 @@ const LoginSchema = Yup.object().shape({
   password: Yup.string().required("Password is required")
 });
 
-class Login extends Component {
-  constructor(props) {
-    super(props);
+const Login = (props)=> {
+  const dispatch = useDispatch();
+  const loginReducer = useSelector(({loginReducer})=> loginReducer);
 
-    this.state = {
-      alert: null
-    };
-  }
-  initializeRecaptcha = async =>{
+  const initializeRecaptcha = (async) => { 
     const script = document.createElement('script');
     script.src = "https://www.google.com/recaptcha/api.js";
     script.async = true;
@@ -32,13 +31,13 @@ class Login extends Component {
     document.body.appendChild(script);
   };
   
-  componentDidMount() {
+  useEffect(()=> {
 
-    this.initializeRecaptcha();
+    initializeRecaptcha();
     if (localStorage.getItem("TOKEN_KEY") != null) {
-        return this.props.history.goBack();
+        return props.history.goBack();
     }
-    let notify = this.props.match.params["notify"]
+    let notify = props.match.params["notify"]
     if(notify !== undefined){
       if(notify === 'error'){
         swal("Activation Fail please try again !", '', "error")
@@ -47,9 +46,9 @@ class Login extends Component {
       }
      
     }
-   }
+   },[]);
 
-  submitForm = (values, history) => {
+  const submitForm = (values, history) => {
     axios
       .post(process.env.REACT_APP_API + "login", values)
       .then(res => {
@@ -67,7 +66,7 @@ class Login extends Component {
         return swal("Error!", error.message, "error");
       });
   };
-  showForm = ({
+ const showForm = ({
     values,
     errors,
     touched,
@@ -129,8 +128,8 @@ class Login extends Component {
         <div className="form-group">
           <label>Recaptcha Validation</label>
           <Recaptcha
-            // sitekey="6Le3jrsZAAAAAEQwff0m-qrLnOXbHlx4jBVLUCgH"
-            sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
+            sitekey="6Le3jrsZAAAAAEQwff0m-qrLnOXbHlx4jBVLUCgH"
+            //sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
             render="explicit"
             theme="light"
             verifyCallback={response => {
@@ -163,7 +162,7 @@ class Login extends Component {
     );
   };
 
-  render() {
+  
     return (
       <div class="login-page">
         <div className="register-box" >
@@ -179,13 +178,14 @@ class Login extends Component {
                   recaptcha: ""
                 }}
                 onSubmit={(values, { setSubmitting }) => {
-                  this.submitForm(values, this.props.history);
+
+                  dispatch(loginActions.login(values, props.history));
                   setSubmitting(false);
                 }}
                 validationSchema={LoginSchema}
               >
                 {/* {this.showForm()}            */}
-                {props => this.showForm(props)}
+                {props => showForm(props)}
               </Formik>
               <p class="mb-1">
                 <Link to="/password/forgot">Esqueci minha senha</Link>
@@ -200,7 +200,7 @@ class Login extends Component {
         </div>
       </div>
     );
-  }
+
 }
 
 export default Login;

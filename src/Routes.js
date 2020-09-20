@@ -8,19 +8,21 @@ import Login from './Components/Login/index';
 import Profile from './Components/Profile/index';
 import Passwordreset from "./Components/passwordreset/index";
 import Passwordforgot from "./Components/passwordforgot/index";
+	
+import * as loginActions from "./actions/login.action";
+import { useDispatch, useSelector } from "react-redux";
 
 
-//Verifica Se existe token para poder entrar na rota
-const isLoggedIn = () => {
-    return localStorage.getItem('TOKEN_KEY') != null;
-  };
+
+  
+const Routes = ()=>{
   const SecuredRoute = ({ component: Component, ...rest }) => (
       
     <Route
       {...rest}
       render={props =>
       
-        isLoggedIn() === true ? (
+        loginActions.isLoggedIn() === true ? (
           <Component {...props} />
         ) : (
           <Redirect to="/login" />
@@ -29,7 +31,8 @@ const isLoggedIn = () => {
     />
   );
   
-const Routes = ()=>(
+
+  return(
     <BrowserRouter>
         <Switch>
             <SecuredRoute exact path="/" component={Pagina}></SecuredRoute>
@@ -43,6 +46,7 @@ const Routes = ()=>(
             <SecuredRoute path="/perfil" component={Profile}></SecuredRoute>
         </Switch>
     </BrowserRouter>
-    
-);
+    );
+};
+
 export default Routes;
