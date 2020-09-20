@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import { Formik } from "formik";
 import './css.css';
 import * as loginActions from "../../actions/login.action";
@@ -27,14 +27,13 @@ const Login = (props)=> {
     script.defer = true;
     document.body.appendChild(script);
   };
-  
-  useEffect((props)=> {
+  useEffect(()=> {
 
     initializeRecaptcha();
     if (localStorage.getItem("TOKEN_KEY") != null) {
         return props.history.goBack();
     }
-    let notify = props.match.params["notify"]
+    let notify = props.match.params["notify"];
     if(notify !== undefined){
       if(notify === 'error'){
         swal("Activation Fail please try again !", '', "error")
@@ -43,6 +42,7 @@ const Login = (props)=> {
       }
      
     }
+  // eslint-disable-next-line 
    },[]);
 
  const showForm = ({
@@ -107,8 +107,8 @@ const Login = (props)=> {
         <div className="form-group">
           <label>Recaptcha Validation</label>
           <Recaptcha
-            sitekey="6Le3jrsZAAAAAEQwff0m-qrLnOXbHlx4jBVLUCgH"
-            //sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
+            //sitekey="6Le3jrsZAAAAAEQwff0m-qrLnOXbHlx4jBVLUCgH"
+            sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
             render="explicit"
             theme="light"
             verifyCallback={response => {
