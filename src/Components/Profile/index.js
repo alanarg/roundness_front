@@ -81,14 +81,15 @@ class Profile extends Component {
   }
 
   showPreviewImage = values => {
+    console.log(this.state.response.avatar);
     return (
       <div class='text-center'>
         <img
           id='avatars'
           alt="avatar"
           src={
-            values.file_obj != null
-              ? values.file_obj
+            values.file_obj !== undefined
+              ?  values.file_obj
               : './user.jpg'
           }
           class='profile-user-img img-fluid img-circle'
@@ -103,7 +104,7 @@ class Profile extends Component {
 
   getData = async id => {
     await axios
-      .get(process.env.REACT_APP_API_URL + "usuario/" + id)
+      .get( process.env.REACT_APP_API_URL+"usuario/" + id)
       .then(response => {
         console.log(response.data)
         document.getElementById('avatars').src =
@@ -142,6 +143,7 @@ class Profile extends Component {
     isSubmitting,
     setFieldValue
   }) => {
+    
     return (
       <form  onSubmit={handleSubmit}>
         {this.showPreviewImage(values)}
@@ -151,9 +153,10 @@ class Profile extends Component {
             <label htmlFor='exampleInputFile'>Avatar upload</label>
             <div className='input-group'>
               <div className='custom-file'>
+                
                 <input
                   type='file'
-                  value={values.avatars}
+                  
                   onChange={e => {
                     e.preventDefault()
                     setFieldValue('avatars', e.target.files[0]) // for upload
@@ -162,18 +165,17 @@ class Profile extends Component {
                       URL.createObjectURL(e.target.files[0])
                     ) // for preview image
                   }}
-                  name='avatars'
+                
                   accept='image/*'
                   className={
                     errors.avatars && touched.avatars
                       ? 'form-control is-invalid'
                       : 'form-control'
                   }
+                  name="avatars"
                   id='avatars'
                 />
-                <label className='custom-file-label' htmlFor='exampleInputFile'>
-                  Choose file
-                </label>
+               
               </div>
             </div>
           </div>
