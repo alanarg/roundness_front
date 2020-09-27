@@ -37,7 +37,7 @@ export const setLoginStateToFetching = () => ({
           dispatch(setLoginStateToSuccess(result));
           swal("Success!", result.data.message, "success").then((value) => {});
           console.log("success");
-          history.push("/dashboard");
+          history.push("/");
         } else {
           swal("Error!", result.data.message, "error").then((value) => {});
           dispatch(setLoginStateToFailed(result));

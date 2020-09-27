@@ -107,8 +107,8 @@ const Login = (props)=> {
         <div className="form-group">
           <label>Recaptcha Validation</label>
           <Recaptcha
-            //sitekey="6Le3jrsZAAAAAEQwff0m-qrLnOXbHlx4jBVLUCgH"
-            sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
+            sitekey="6Le3jrsZAAAAAEQwff0m-qrLnOXbHlx4jBVLUCgH"
+            //sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
             render="explicit"
             theme="light"
             verifyCallback={response => {

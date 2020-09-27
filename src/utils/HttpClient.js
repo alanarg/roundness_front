@@ -23,7 +23,7 @@ axios.interceptors.response.use(
   },
   async (error) => {
     // debugger;
-    console.log(error);
+    console.log(error.response);
     if (error.response.status === "401") {
       const refreshToken = localStorage.getItem(server.REFRESH_TOKEN_KEY);
       const refreshUrl = `${apiUrl}/${server.REFRESH_TOKEN_URL}`;
@@ -37,6 +37,8 @@ axios.interceptors.response.use(
       // force logout
       localStorage.removeItem(server.TOKEN_KEY);
       localStorage.removeItem(server.REFRESH_TOKEN_KEY);
+    }else{
+      console.log(error);
     }
 
     return Promise.reject(error);
