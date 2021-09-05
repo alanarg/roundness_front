@@ -34,6 +34,9 @@ const useStyles = makeStyles(theme => ({
       
 
     },
+    icon:{
+      color:'#ffc371'
+    },
     search: {
       position: 'relative',
       borderRadius: theme.shape.borderRadius,
@@ -175,7 +178,7 @@ const Header = ( ) =>
       <MenuItem>
         <IconButton aria-label="show 4 new mails" color="inherit">
           <Badge badgeContent={4} color="secondary">
-            <MailIcon />
+            <MailIcon/>
           </Badge>
         </IconButton>
         <p>Messages</p>
@@ -235,12 +238,12 @@ const Header = ( ) =>
           <div className={classes.sectionDesktop}>
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
-                <MailIcon />
+                <MailIcon className={classes.icon} />
               </Badge>
             </IconButton>
             <IconButton aria-label="show 17 new notifications" color="inherit">
               <Badge badgeContent={17} color="secondary">
-                <NotificationsIcon />
+                <NotificationsIcon className={classes.icon} />
               </Badge>
             </IconButton>
             <IconButton
@@ -251,7 +254,7 @@ const Header = ( ) =>
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-              <AccountCircle />
+              <AccountCircle className={classes.icon} />
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>

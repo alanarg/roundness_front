@@ -81,16 +81,17 @@ class Profile extends Component {
   }
 
   showPreviewImage = values => {
-    console.log(this.state.response.avatar);
+    console.log(this.state.response.avatars);
     return (
       <div class='text-center'>
         <img
-          id='avatars'
+          id="avatars"
+          name="avatars"
           alt="avatar"
           src={
             values.file_obj !== undefined
               ?  values.file_obj
-              : './user.jpg'
+              : null
           }
           class='profile-user-img img-fluid img-circle'
           width={500}
@@ -104,12 +105,11 @@ class Profile extends Component {
 
   getData = async id => {
     await axios
-      .get( process.env.REACT_APP_API_URL+"usuario/" + id)
-      .then(response => {
+      .get("usuario/" + id)
+      .then(async response => {
         console.log(response.data)
-        document.getElementById('avatars').src =
-        process.env.REACT_APP_API_URL + "images/" + response.data.avatars
         this.setState({ response: response.data })
+        document.getElementById('avatars').src = "https://roundness.herokuapp.com/images/" + response.data.avatars
       })
       .catch(error => {
         this.setState({ error_message: error.message })
@@ -117,7 +117,7 @@ class Profile extends Component {
   }
   submitForm = async formData => {
     await axios
-      .put(process.env.REACT_APP_API_URL + "profile", formData)
+      .put("profile", formData)
       .then(res => {
         console.log(res.data.result)
         if (res.data.result === 'success') {
